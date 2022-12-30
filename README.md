@@ -2,12 +2,12 @@
 
 ### Aqui encontra-se meus projetos e curva de aprendizado em data analytics.
 
-* [SQL](https://github.com/brunucoelho/Jornada-Data_analytics/edit/main/README.md)
+* [SQL](https://github.com/brunucoelho/Jornada-Data_analytics)
 
-* [Python](https://github.com/brunucoelho/Jornada-Data_analytics/edit/main/README.md)
+* [Python](https://github.com/brunucoelho/Jornada-Data_analytics)
 
-* [Power BI](https://github.com/brunucoelho/Jornada-Data_analytics/edit/main/README.md)
+* [Power BI](https://github.com/brunucoelho/Jornada-Data_analytics)
 
-* [Machine learning](https://github.com/brunucoelho/Jornada-Data_analytics/edit/main/README.md)
+* [Machine learning](https://github.com/brunucoelho/Jornada-Data_analytics)
 
 
