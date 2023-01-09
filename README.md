@@ -2,6 +2,9 @@
 
 ### Aqui encontra-se meus projetos e curva de aprendizado em data analytics.
 
+> <p>"A informação é o novo petróleo do século XXI e a análise de dados é o novo motor de combustão."</p>
+> <p> Peter Sondergaard</p>
+
 * [SQL](https://github.com/brunucoelho/Jornada-Data_analytics)
 
 * [Python](https://github.com/brunucoelho/Jornada-Data_analytics)
