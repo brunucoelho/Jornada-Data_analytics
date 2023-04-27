@@ -33,7 +33,23 @@ print('-'*7)
 do_four(print, 'spam')
 
 #Exercício 3.3
-#Escreva uma função que desenhe uma grade como a seguinte:
+#1. Escreva uma função que desenhe uma grade como a seguinte:
 
 #Dica: para exibir mais de um valor em uma linha, podemos usar uma sequência de valores separados por vírgula: print('+', '-')
 #Por padrão, print avança para a linha seguinte, mas podemos ignorar esse comportamento e inserir um espaço no fim, desta forma: python print('+', end='') print('-') A saída dessas instruções é + -. Uma instrução print sem argumento termina a linha atual e vai para a próxima linha.
+
+linha = 4
+i = 0
+p = 0
+print(('+'+' - '*4)*2+'+')
+while i < linha:
+    print(('|'+'   '*4)*2+'|')
+    i +=1
+print(('+'+' - '*4)*2+'+')
+while p < linha:
+    print(('|'+'   '*4)*2+'|')
+    p +=1
+print(('+'+' - '*4)*2+'+')
+
+#2. Escreva uma função que desenhe uma grade semelhante com quatro linhas e quatro colunas.
+
