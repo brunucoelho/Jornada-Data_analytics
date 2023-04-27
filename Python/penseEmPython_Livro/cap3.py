@@ -52,4 +52,16 @@ while p < linha:
 print(('+'+' - '*4)*2+'+')
 
 #2. Escreva uma função que desenhe uma grade semelhante com quatro linhas e quatro colunas.
-
+def grid(linha):
+    '''
+        A função grid faz uma grade com N linhas e N colunas, sendo N o \n valor atribuido no argumento da função grid(N). \n N deve ser obrigatóriamente do tipo int
+    '''
+    i = 0
+    print(('+'+' - '*4)*linha+'+')
+    while i < linha:
+        print(('|'+'   '*4)*linha+'|')
+        print(('|'+'   '*4)*linha+'|')
+        print(('|'+'   '*4)*linha+'|')
+        print(('|'+'   '*4)*linha+'|')
+        print(('+'+' - '*4)*linha+'+')
+        i +=1
