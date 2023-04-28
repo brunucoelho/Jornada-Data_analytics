@@ -7,11 +7,9 @@ import turtle
 squirrel = turtle.Turtle()
 squirrel.shape('turtle')
 for i in range(4):
-    squirrel.forward(50)
-    squirrel.right(90)
-squirrel.left(90)
-
-
+    squirrel.fd(50)
+    squirrel.rt(90)
+squirrel.lt(90)
 
 #2. Acrescente outro parâmetro, chamado length, ao square. Altere o corpo para que o comprimento dos lados seja length e então altere a chamada da função para fornecer um segundo argumento. Execute o programa novamente. Teste o seu programa com uma variedade de valores para length.
 
@@ -36,7 +34,6 @@ def polygon(t, length, n):
         t.fd(length)
         t.rt(360/n)
     t.lt(length)
-
 
 #4. Escreva uma função chamada circle que use o turtle, t e um raio r como parâmetros e desenhe um círculo aproximado ao chamar polygon com um comprimento e número de lados adequados. Teste a sua função com uma série de valores de r.Dica: descubra a circunferência do círculo e certifique-se de que length * n = circumference.
 
