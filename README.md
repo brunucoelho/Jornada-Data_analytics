@@ -5,6 +5,8 @@
 
 > <p>"O objetivo é transformar dados em informações e informações em insight."</p> <p>Carly Fiorina</p>
 
+Hi, sou o Bruno e estou em transição de carreira para a área de dados, aqui está meu [currículo](https://brunucoelho.github.io/Jornada-Data_analytics/) para conhecimento das minhas experiências. Qualquer dúvida entre em contato.
+
 
 * [SQL](https://github.com/brunucoelho/Jornada-Data_analytics)
 
