@@ -11,3 +11,7 @@ _________________________________________________________________________
 - [ ] ExerciciosArquivos </p>
 - [ ] ExerciciosClasses </p>
 - [ ] ListaDeExerciciosProjetos </p>
+
+_________________________________________________________________________
+
+Exercicios feitos do livro <code> Pense em Python <code>
