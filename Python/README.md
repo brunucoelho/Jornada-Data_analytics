@@ -2,7 +2,7 @@
 
 Exercicios feitos por mim para aplicação dos conhecimentos adquiridos nos estudos. Estou seguindo o RoadMap Python, <https://roadmap.dunossauro.live/>. Fornecido pelo [@dunossauro](https://linktr.ee/dunossauro). As lista pode ser encontrada em [wikiPython](https://wiki.python.org.br/ListaDeExercicios).
 _________________________________________________________________________
-- [x] [Estrutura Sequencial]() </p>
+- [x] [Estrutura Sequencial](https://github.com/brunucoelho/Jornada-Data_analytics/blob/main/Python/estruturaSequencial.py) </p>
 - [ ] EstruturaDeDecisao </p>
 - [ ] EstruturaDeRepeticao </p>
 - [ ] ExerciciosListas </p>
