@@ -180,7 +180,25 @@ Salário Liquido                 : R\\$  935,00<br>
 
 
 """#### 13. Faça um Programa que leia um número e exiba o dia correspondente da semana. (1-Domingo, 2- Segunda, etc.), se digitar outro valor deve aparecer valor inválido."""
-
+dia = input()
+semana ='1234567'
+if dia in semana:
+  if dia == '1':
+    print('Domingo')
+  elif dia == '2':
+    print('Segunda')
+  elif dia == '3':
+    print('Terça')
+  elif dia == '4':
+    print('Quarta')
+  elif dia == '5':
+    print('Quinta')
+  elif dia == '6':
+    print('Sexta')
+  elif dia == '7':
+    print('Sábado')
+else:
+  print('Digite um número válido (1 a 7)')
 
 
 """#### 14. Faça um programa que lê as duas notas parciais obtidas por um aluno numa disciplina ao longo de um semestre, e calcule a sua média. Em seguida, mostre qual conceito o aluno teve. A atribuição de conceitos obedece à tabela abaixo:
