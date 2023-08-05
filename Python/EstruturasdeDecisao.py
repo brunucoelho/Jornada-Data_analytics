@@ -177,7 +177,41 @@ Salário Liquido                 : R\\$  935,00<br>
 ###### Obs: Não vamos nos preocupar tanto com a formatação dos números (nº de casas decimais, por exemplo, veremos isso no próximo módulo)
 """
 
-
+valor_hr = float(input())
+salario2 = 220*valor_hr
+inss = 0.1
+if salario2 <= 900:
+  ir = 1
+  print('Salário bruto: R$ {:.2f}'.format(salario2))
+  print('Isento de IR')
+  print('(-) INSS({:.1%}): R$ {:.2f}'.format(inss,salario2*inss))
+  print('FGTS (11%): R$ {:.2f}'.format(salario2*(11/100)))
+  print('Total de descontos: R$ {:.2f}'.format(salario2*(11/100)))
+  print('Salário Liquido: R$ {:.2f}'.format(salario2-salario2*(11/100)))
+elif salario2 > 900 and salario2 <= 1500:
+  ir = 0.05
+  print('Salário bruto: R$ {:.2f}'.format(salario2))
+  print('(-) IR({:.1%}): R$ {:.2f}'.format(ir,salario2*ir))
+  print('(-) INSS({:.1%}): R$ {:.2f}'.format(inss,salario2*inss))
+  print('FGTS (11%): R$ {:.2f}'.format(salario2*(11/100)))
+  print('Total de descontos: R$ {:.2f}'.format(salario2*(10/100)+(salario2*ir)))
+  print('Salário Liquido: R$ {:.2f}'.format(salario2-(salario2*(10/100)+(salario2*ir))))
+elif salario2 > 1500 and salario2 <= 2500:
+  ir = 0.1
+  print('Salário bruto: R$ {:.2f}'.format(salario2))
+  print('(-) IR({:.1%}): R$ {:.2f}'.format(ir,salario2*ir))
+  print('(-) INSS({:.1%}): R$ {:.2f}'.format(inss,salario2*inss))
+  print('FGTS (11%): R$ {:.2f}'.format(salario2*(11/100)))
+  print('Total de descontos: R$ {}'.format(salario2*(10/100)+(salario2*ir)))
+  print('Salário Liquido: R$ {}'.format(salario2-(salario2*(10/100)+(salario2*ir))))
+else:
+  ir = 0.2
+  print('Salário bruto: R$ {:.2f}'.format(salario2))
+  print('(-) IR({:.1%}): R$ {:.2f}'.format(ir,salario2*ir))
+  print('(-) INSS({:.1%}): R$ {:.2f}'.format(inss,salario2*inss))
+  print('FGTS (11%): R$ {:.2f}'.format(salario2*(11/100)))
+  print('Total de descontos: R$ {}'.format(salario2*(10/100)+(salario2*ir)))
+  print('Salário Liquido: R$ {}'.format(salario2-(salario2*(10/100)+(salario2*ir))))
 
 """#### 13. Faça um Programa que leia um número e exiba o dia correspondente da semana. (1-Domingo, 2- Segunda, etc.), se digitar outro valor deve aparecer valor inválido."""
 dia = input()
@@ -212,7 +246,20 @@ Entre 4.0 e zero        E
 </pre>
 """
 
-
+nota01 = float(input())
+nota02 = float(input())
+media_1 = (nota01+nota02)/2
+print('Média: ',media_1)
+if media_1 < 4.0:
+  print('Conceito E')
+elif media_1 >= 4.0 and media_1 < 6.0:
+  print('Conceito D')
+elif media_1 >= 6.0 and media_1 < 7.5:
+  print('Conceito C')
+elif media_1 >= 7.5 and media_1 < 9.0:
+  print('Conceito B')
+else:
+  print('Conceito A')
 
 """#### 15. Você está construindo um calendário para controlar dias de trabalho a pedido do RH. Nessa construção, você vai precisar definir quais anos são bissextos e quais não são, para montar o calendário de forma correta. Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto.
 <pre>
