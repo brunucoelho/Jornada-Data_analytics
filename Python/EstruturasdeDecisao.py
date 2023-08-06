@@ -262,7 +262,7 @@ else:
   print('Conceito A')
 
 """#### 15. Você está construindo um calendário para controlar dias de trabalho a pedido do RH. Nessa construção, você vai precisar definir quais anos são bissextos e quais não são, para montar o calendário de forma correta. Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto.
-<pre>
+
 Dica para determinar se um ano é bissexto:
 - São bissextos todos os anos múltiplos de 400, p.ex.: 1600, 2000, 2400, 2800...
 - São bissextos todos os múltiplos de 4, exceto se for múltiplo de 100 mas não de 400,
@@ -272,12 +272,17 @@ ex1: 2004 é múltiplo de 4, mas não é múltiplo de 100, então é bissexto.
 ex2: 2000 é múltiplo de 4, mas é múltiplo de 100, só que também é multiplo de 400, então é bissexto (porque todo ano múltiplo de 400 é bissexto, independente do resto).
 ex3: 1900 é múltiplo de 4, é múltiplo de 100, mas não é múltiplo de 400, então não é bissexto
 
-</pre>
-
 Dica: lembre que: numero % 4 é o resto da divisão do número por 4, ex: 10 % 3 = 1 (já que 10/3 = 3 e resta 1)
 """
-
-
+ano = int(input())
+if ano%4 == 0 and ano%100 == 0 and ano%400 != 0:
+  print('Não é ano bissexto')
+elif ano%4 == 0 and ano%100 == 0 and ano%400 == 0:
+  print('É ano bissexto')
+elif ano%4 == 0 and ano%100 != 0:
+  print('É ano bissexto')
+elif ano%4 != 0:
+  print('Não é ano bissexto')
 
 """#### 16. Faça um Programa para leitura de três notas parciais de um aluno. O programa deve calcular a média alcançada por aluno e presentar:
 <pre>
@@ -286,18 +291,32 @@ A mensagem "Reprovado", se a média for menor do que 7, com a respectiva média 
 A mensagem "Aprovado com Distinção", se a média for igual a 10.
 </pre>
 """
-
-
+nota_um = float(input())
+nota_dois = float(input())
+nota_tres = float(input())
+media_dois = (nota_um+nota_dois+nota_tres)/3
+print('Média: {:.2f}'.format(media_dois))
+if media_dois < 10.0 and media_dois >= 7:
+  print('Aprovado')
+elif media_dois == 10:
+  print('Aprovado com Distinção')
+else:
+  print('Reprovado')
 
 """#### 17. João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar o rendimento diário de seu trabalho. Toda vez que ele traz um peso de peixes maior que o estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) deve pagar uma multa de R$ 4,00 por quilo excedente. João precisa que você faça um programa que leia a variável peso (peso de peixes) e calcule o excesso. Gravar na variável excesso a quantidade de quilos além do limite e na variável multa o valor da multa que João deverá pagar. Imprima os dados do programa com as mensagens adequadas."""
 
-
+quilos = float(input())
+variacao = quilos - 50
+if variacao > 0:
+  preco = variacao * 4
+  print('Nessa pesca houve uma variação de {}Kg, sendo assim deve-se pagar RS{:.2f} de multa'.format(variacao, preco))
+else:
+  print('Não houve excesso de peso.')
 
 """#### 18. Faça um Programa para um caixa eletrônico. O programa deverá perguntar ao usuário a valor do saque e depois informar quantas notas de cada valor serão fornecidas. As notas disponíveis serão as de 1, 5, 10, 50 e 100 reais. O valor mínimo é de 10 reais e o máximo de 600 reais. O programa não deve se preocupar com a quantidade de notas existentes na máquina.
-<pre>
+
 Exemplo 1: Para sacar a quantia de 256 reais, o programa fornece duas notas de 100, uma nota de 50, uma nota de 5 e uma nota de 1;
 Exemplo 2: Para sacar a quantia de 399 reais, o programa fornece três notas de 100, uma nota de 50, quatro notas de 10, uma nota de 5 e quatro notas de 1.
-</pre>
 
 Dica1: numero // 10 vai te dar como resposta a parte inteira da divisão do número por 10.<br>
 Dica2: numero % 10 vai te dar o resto da divisão do número por 10.
@@ -306,20 +325,19 @@ Dica2: numero % 10 vai te dar o resto da divisão do número por 10.
 
 
 """#### 19. Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
-<pre>
+
 "Telefonou para a vítima?"
 "Esteve no local do crime?"
 "Mora perto da vítima?"
 "Devia para a vítima?"
 "Já trabalhou com a vítima?"
 O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
-</pre>
 """
 
 
 
 """#### 20. Um posto está vendendo combustíveis com a seguinte tabela de descontos:
-<pre>
+
 Álcool:
 até 20 litros, desconto de 3% por litro
 acima de 20 litros, desconto de 5% por litro
@@ -328,30 +346,30 @@ até 20 litros, desconto de 4% por litro
 acima de 20 litros, desconto de 6% por litro
 
 Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 2,50 o preço do litro do álcool é R$ 1,90.
-</pre>
+
 """
 
 
 
 """#### 21. Uma fruteira está vendendo frutas com a seguinte tabela de preços:
-<pre>
+
                       Até 5 Kg           Acima de 5 Kg
 Morango         R$ 2,50 por Kg          R$ 2,20 por Kg
 Maçã            R$ 1,80 por Kg          R$ 1,50 por Kg
 Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar R$ 25,00, receberá ainda um desconto de 10% sobre este total. Escreva um algoritmo para ler a quantidade (em Kg) de morangos e a quantidade (em Kg) de maças adquiridas e escreva o valor a ser pago pelo cliente.
-</pre>
+
 """
 
 
 
 """#### 22. O Hipermercado Tabajara está com uma promoção de carnes que é imperdível. Confira:
-<pre>
+
                       Até 5 Kg           Acima de 5 Kg
 File Duplo      R$ 4,90 por Kg          R$ 5,80 por Kg
 Alcatra         R$ 5,90 por Kg          R$ 6,80 por Kg
 Picanha         R$ 6,90 por Kg          R$ 7,80 por Kg
 Para atender a todos os clientes, cada cliente poderá levar apenas um dos tipos de carne da promoção, porém não há limites para a quantidade de carne por cliente. Se compra for feita no cartão Tabajara o cliente receberá ainda um desconto de 5% sobre o total da compra. Escreva um programa que peça o tipo e a quantidade de carne comprada pelo usuário e gere um cupom fiscal, contendo as informações da compra: tipo e quantidade de carne, preço total, tipo de pagamento, valor do desconto e valor a pagar.
-</pre>
+
 """
 
 
