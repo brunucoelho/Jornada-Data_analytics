@@ -359,8 +359,20 @@ Maçã            R$ 1,80 por Kg          R$ 1,50 por Kg
 Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar R$ 25,00, receberá ainda um desconto de 10% sobre este total. Escreva um algoritmo para ler a quantidade (em Kg) de morangos e a quantidade (em Kg) de maças adquiridas e escreva o valor a ser pago pelo cliente.
 
 """
-
-
+quilos_morango = float(input())
+quilos_maca = float(input())
+if quilos_morango < 5:
+  preco_mor = quilos_morango*2.5
+  print('O preço total dos morangos é de R${:.2f}'.format(preco_mor))
+else:
+  preco_mor = quilos_morango*2.2
+  print('O preço total dos morangos é de R${:.2f}'.format(preco_mor))
+if quilos_maca < 5:
+  preco_maca = quilos_morango*1.8
+  print('O preço total das maças é de R${:.2f}'.format(preco_maca))
+else:
+  preco_maca = quilos_morango*1.5
+  print('O preço total das maças é de R${:.2f}'.format(preco_maca))
 
 """#### 22. O Hipermercado Tabajara está com uma promoção de carnes que é imperdível. Confira:
 
