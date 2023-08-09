@@ -261,7 +261,23 @@ elif media_1 >= 7.5 and media_1 < 9.0:
 else:
   print('Conceito A')
 
-"""#### 15. Você está construindo um calendário para controlar dias de trabalho a pedido do RH. Nessa construção, você vai precisar definir quais anos são bissextos e quais não são, para montar o calendário de forma correta. Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto.
+"""####15. Faça um Programa que peça os 3 lados de um triângulo. O programa deverá informar se os valores podem ser um triângulo. Indique, caso os lados formem um triângulo, se o mesmo é: equilátero, isósceles ou escaleno.
+####Dicas:
+####Três lados formam um triângulo quando a soma de quaisquer dois lados for maior que o terceiro;
+Triângulo Equilátero: três lados iguais;
+Triângulo Isósceles: quaisquer dois lados iguais;
+Triângulo Escaleno: três lados diferentes;
+"""
+
+
+
+"""####16. Faça um programa que calcule as raízes de uma equação do segundo grau, na forma ax2 + bx + c. O programa deverá pedir os valores de a, b e c e fazer as consistências, informando ao usuário nas seguintes situações:
+####Se o usuário informar o valor de A igual a zero, a equação não é do segundo grau e o programa não deve fazer pedir os demais valores, sendo encerrado;
+####Se o delta calculado for negativo, a equação não possui raizes reais. Informe ao usuário e encerre o programa;
+####Se o delta calculado for igual a zero a equação possui apenas uma raiz real; informe-a ao usuário;
+####Se o delta for positivo, a equação possui duas raiz reais; informe-as ao usuário;
+
+#### 17. Você está construindo um calendário para controlar dias de trabalho a pedido do RH. Nessa construção, você vai precisar definir quais anos são bissextos e quais não são, para montar o calendário de forma correta. Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto.
 
 Dica para determinar se um ano é bissexto:
 - São bissextos todos os anos múltiplos de 400, p.ex.: 1600, 2000, 2400, 2800...
@@ -272,8 +288,11 @@ ex1: 2004 é múltiplo de 4, mas não é múltiplo de 100, então é bissexto.
 ex2: 2000 é múltiplo de 4, mas é múltiplo de 100, só que também é multiplo de 400, então é bissexto (porque todo ano múltiplo de 400 é bissexto, independente do resto).
 ex3: 1900 é múltiplo de 4, é múltiplo de 100, mas não é múltiplo de 400, então não é bissexto
 
+
+
 Dica: lembre que: numero % 4 é o resto da divisão do número por 4, ex: 10 % 3 = 1 (já que 10/3 = 3 e resta 1)
 """
+
 ano = int(input())
 if ano%4 == 0 and ano%100 == 0 and ano%400 != 0:
   print('Não é ano bissexto')
@@ -284,13 +303,28 @@ elif ano%4 == 0 and ano%100 != 0:
 elif ano%4 != 0:
   print('Não é ano bissexto')
 
-"""#### 16. Faça um Programa para leitura de três notas parciais de um aluno. O programa deve calcular a média alcançada por aluno e presentar:
+"""####18. Faça um Programa que peça uma data no formato dd/mm/aaaa e determine se a mesma é uma data válida."""
+
+
+
+"""####19. Faça um Programa que leia um número inteiro menor que 1000 e imprima a quantidade de centenas, dezenas e unidades do mesmo.
+####Observando os termos no plural a colocação do "e", da vírgula entre outros.
+####Exemplo:
+####326 = 3 centenas, 2 dezenas e 6 unidades
+####12 = 1 dezena e 2 unidades
+####Testar com: 326, 300, 100, 320, 310,305, 301, 101, 311, 111, 25, 20, 10, 21, 11, 1, 7 e 16
+"""
+
+
+
+"""#### 20. Faça um Programa para leitura de três notas parciais de um aluno. O programa deve calcular a média alcançada por aluno e presentar:
 <pre>
 A mensagem "Aprovado", se a média for maior ou igual a 7, com a respectiva média alcançada;
 A mensagem "Reprovado", se a média for menor do que 7, com a respectiva média alcançada;
 A mensagem "Aprovado com Distinção", se a média for igual a 10.
 </pre>
 """
+
 nota_um = float(input())
 nota_dois = float(input())
 nota_tres = float(input())
@@ -303,20 +337,11 @@ elif media_dois == 10:
 else:
   print('Reprovado')
 
-"""#### 17. João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar o rendimento diário de seu trabalho. Toda vez que ele traz um peso de peixes maior que o estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) deve pagar uma multa de R$ 4,00 por quilo excedente. João precisa que você faça um programa que leia a variável peso (peso de peixes) e calcule o excesso. Gravar na variável excesso a quantidade de quilos além do limite e na variável multa o valor da multa que João deverá pagar. Imprima os dados do programa com as mensagens adequadas."""
-
-quilos = float(input())
-variacao = quilos - 50
-if variacao > 0:
-  preco = variacao * 4
-  print('Nessa pesca houve uma variação de {}Kg, sendo assim deve-se pagar RS{:.2f} de multa'.format(variacao, preco))
-else:
-  print('Não houve excesso de peso.')
-
-"""#### 18. Faça um Programa para um caixa eletrônico. O programa deverá perguntar ao usuário a valor do saque e depois informar quantas notas de cada valor serão fornecidas. As notas disponíveis serão as de 1, 5, 10, 50 e 100 reais. O valor mínimo é de 10 reais e o máximo de 600 reais. O programa não deve se preocupar com a quantidade de notas existentes na máquina.
-
+"""#### 21. Faça um Programa para um caixa eletrônico. O programa deverá perguntar ao usuário a valor do saque e depois informar quantas notas de cada valor serão fornecidas. As notas disponíveis serão as de 1, 5, 10, 50 e 100 reais. O valor mínimo é de 10 reais e o máximo de 600 reais. O programa não deve se preocupar com a quantidade de notas existentes na máquina.
+<pre>
 Exemplo 1: Para sacar a quantia de 256 reais, o programa fornece duas notas de 100, uma nota de 50, uma nota de 5 e uma nota de 1;
 Exemplo 2: Para sacar a quantia de 399 reais, o programa fornece três notas de 100, uma nota de 50, quatro notas de 10, uma nota de 5 e quatro notas de 1.
+</pre>
 
 Dica1: numero // 10 vai te dar como resposta a parte inteira da divisão do número por 10.<br>
 Dica2: numero % 10 vai te dar o resto da divisão do número por 10.
@@ -324,19 +349,36 @@ Dica2: numero % 10 vai te dar o resto da divisão do número por 10.
 
 
 
-"""#### 19. Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+"""####22. Faça um Programa que peça um número inteiro e determine se ele é par ou impar. Dica: utilize o operador módulo (resto da divisão)."""
 
+
+
+"""####23. Faça um Programa que peça um número e informe se o número é inteiro ou decimal. Dica: utilize uma função de arredondamento."""
+
+
+
+"""####24.Faça um Programa que leia 2 números e em seguida pergunte ao usuário qual operação ele deseja realizar. O resultado da operação deve ser acompanhado de uma frase que diga se o número é:
+par ou ímpar;
+positivo ou negativo;
+inteiro ou decimal.
+"""
+
+
+
+"""#### 25. Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+<pre>
 "Telefonou para a vítima?"
 "Esteve no local do crime?"
 "Mora perto da vítima?"
 "Devia para a vítima?"
 "Já trabalhou com a vítima?"
 O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+</pre>
 """
 
 
 
-"""#### 20. Um posto está vendendo combustíveis com a seguinte tabela de descontos:
+"""#### 26. Um posto está vendendo combustíveis com a seguinte tabela de descontos:
 
 Álcool:
 até 20 litros, desconto de 3% por litro
@@ -345,20 +387,23 @@ Gasolina:
 até 20 litros, desconto de 4% por litro
 acima de 20 litros, desconto de 6% por litro
 
-Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R$ 2,50 o preço do litro do álcool é R$ 1,90.
+Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: A-álcool, G-gasolina), calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R\$ 2,50 o preço do litro do álcool é R\$ 1,90.
 
 """
 
 
 
-"""#### 21. Uma fruteira está vendendo frutas com a seguinte tabela de preços:
+"""#### 27. Uma fruteira está vendendo frutas com a seguinte tabela de preços:
 
-                      Até 5 Kg           Acima de 5 Kg
-Morango         R$ 2,50 por Kg          R$ 2,20 por Kg
-Maçã            R$ 1,80 por Kg          R$ 1,50 por Kg
+|  |                      Até 5 Kg          | Acima de 5 Kg|
+|--|--|--|
+|Morango     |    R\$ 2,50 por Kg         | R\$ 2,20 por Kg|
+|Maçã       |     R\$ 1,80 por Kg        |  R\$ 1,50 por Kg|
+
 Se o cliente comprar mais de 8 Kg em frutas ou o valor total da compra ultrapassar R$ 25,00, receberá ainda um desconto de 10% sobre este total. Escreva um algoritmo para ler a quantidade (em Kg) de morangos e a quantidade (em Kg) de maças adquiridas e escreva o valor a ser pago pelo cliente.
 
 """
+
 quilos_morango = float(input())
 quilos_maca = float(input())
 if quilos_morango < 5:
@@ -374,58 +419,30 @@ else:
   preco_maca = quilos_morango*1.5
   print('O preço total das maças é de R${:.2f}'.format(preco_maca))
 
-"""#### 22. O Hipermercado Tabajara está com uma promoção de carnes que é imperdível. Confira:
 
-                      Até 5 Kg           Acima de 5 Kg
-File Duplo      R$ 4,90 por Kg          R$ 5,80 por Kg
-Alcatra         R$ 5,90 por Kg          R$ 6,80 por Kg
-Picanha         R$ 6,90 por Kg          R$ 7,80 por Kg
+
+"""#### 28. O Hipermercado Tabajara está com uma promoção de carnes que é imperdível. Confira:
+
+|                 | Até 5 Kg |          Acima de 5 Kg|
+|--------|-------- |-------|
+|File Duplo     | R\$ 4,90 por Kg        |  R\$ 5,80 por Kg|
+|Alcatra       |  R\$ 5,90 por Kg      |    R\$ 6,80 por Kg|
+|Picanha      |   R\$ 6,90 por Kg       |   R\$ 7,80 por Kg|
+
 Para atender a todos os clientes, cada cliente poderá levar apenas um dos tipos de carne da promoção, porém não há limites para a quantidade de carne por cliente. Se compra for feita no cartão Tabajara o cliente receberá ainda um desconto de 5% sobre o total da compra. Escreva um programa que peça o tipo e a quantidade de carne comprada pelo usuário e gere um cupom fiscal, contendo as informações da compra: tipo e quantidade de carne, preço total, tipo de pagamento, valor do desconto e valor a pagar.
 
 """
 
 
 
-"""#### 23. Faça um Programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser pintada. Considere que a cobertura da tinta é de 1 litro para cada 6 metros quadrados e que a tinta é vendida em latas de 18 litros, que custam R\\$ 80,00 ou em galões de 3,6 litros, que custam R\\$ 25,00."""
-
-area = float(input('Informe o tamanho da área a ser pintada em m²: '))
-litros_tinta = area / 6
-
-"""##### Informe ao usuário as quantidades de tinta a serem compradas e os respectivos preços em 3 situações.
-
-Dica: lembre dos operadores // e % mostrados em exercícios anteriores<br>
-Dica1: numero // 10 vai te dar como resposta a parte inteira da divisão do número por 10.<br>
-Dica2: numero % 10 vai te dar o resto da divisão do número por 10.
-
-##### 1. Comprar apenas latas de 18 litros: (apenas latas inteiras)
+"""#### <b>EXTRA</b>
+João Papo-de-Pescador, homem de bem, comprou um microcomputador para controlar o rendimento diário de seu trabalho. Toda vez que ele traz um peso de peixes maior que o estabelecido pelo regulamento de pesca do estado de São Paulo (50 quilos) deve pagar uma multa de R$ 4,00 por quilo excedente. João precisa que você faça um programa que leia a variável peso (peso de peixes) e calcule o excesso. Gravar na variável excesso a quantidade de quilos além do limite e na variável multa o valor da multa que João deverá pagar. Imprima os dados do programa com as mensagens adequadas.
 """
 
-
-
-"""##### 2. Comprar apenas galões de 3,6 litros: (apenas galoes inteiros)"""
-
-
-
-"""##### 3. Misturar latas e galões, de forma que o desperdício de tinta seja menor. Acrescente 10% de folga e sempre arredonde os valores para cima, isto é, considere latas cheias.
-
-O custo da lata é 80/18 = 4,44 R\\$/L
-
-O custo do galão é 25/3,6 = 6,94 R\\$/L
-
-A lata é mais econômica, então todas as latas inteiras que pudermos usar devemos comprar em latas. Se ficar faltando alguma coisa para completar devemos avaliar se é melhor comprar latas ou galões. Exemplo:
-
-Se queremos comprar 90 litros. 5 latas dão exatamente 90 litros. Então devemos comprar tudo em latas.
-
-Se queremos comprar 95 litros. 5 latas dão exatamente 90 litros. Então devemos comprar pelo menos 5 latas e avaliar o que falta, se estes últimos 5 litros valem mais apenas em latas ou galões.
-
-Para os 5 litros faltantes precisamos de 2 galões que custam 50 reais no total. Ou de uma lata que custa 80 reais no total. Portanto, neste caso vale mais a pena usar 2 galões.
-
-Se queremos comprar 107 litros. 5 latas dão exatamente 90 litros. Então devemos comprar pelo menos 5 latas e avaliar o que falta, se estes últimos 5 litros valem mais apenas em latas ou galões.
-
-Para os 17 litros faltantes precisamos de 5 galões que custam 125 reais no total. Ou de uma lata que custa 80 reais no total. Portanto, neste caso vale mais a pena usar uma lata.
-
-3 galões custam 75 reais, 4 galões custam 100 reais. Então, se for possível completar com até 3 galões escolhe-se galões. Qualquer quantidade maior que 3 galões, usa-se latas.
-
-Podemos ir ao exercício:
-"""
-
+quilos = float(input())
+variacao = quilos - 50
+if variacao > 0:
+  preco = variacao * 4
+  print('Nessa pesca houve uma variação de {}Kg, sendo assim deve-se pagar RS{:.2f} de multa'.format(variacao, preco))
+else:
+  print('Não houve excesso de peso.')
