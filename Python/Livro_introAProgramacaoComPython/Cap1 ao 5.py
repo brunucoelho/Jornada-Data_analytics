@@ -90,30 +90,46 @@ print('A soma dos números é de:',(numero_um+numero_dois))
 
 """Exercício 3.8 Escreva um programa que leia um valor em metros e o exiba convertido em milímetros."""
 
-
+metro = int(input("Digite o valor do metro:"))
+print('{} metros tem {} milimetros'.format(metro,metro*1000))
 
 """Exercício 3.9 Escreva um programa que leia a quantidade de dias, horas, minutos
 e segundos do usuário. Calcule o total em segundos.
 """
 
+dias = int(input("Quantos dias?"))
+horas = int(input("Quantos horas?"))
+minutos = int(input("Quantos minutos?"))
+segundos = int(input("Quantos segundos?"))
 
+conversao = (dias*24*60*60)+(horas*60*60)+(minutos*60)+(segundos)
+print('{} dias, {} horas, {} minutos e {} seguntos. Possuem {} segundos.'.format(dias, horas, minutos, segundos, conversao))
 
 """Exercício 3.10 Faça um programa que calcule o aumento de um salário. Ele deve
 solicitar o valor do salário e a porcentagem do aumento. Exiba o valor do aumento
 e do novo salário.
 """
 
-
+salario_2 = float(input("Digite o valor do salário "))
+aumento = float(input("Digite a porcentagem do aumento "))
+valor_aumentado = salario_2*(aumento/100)
+print('O aumento foi de R${:.2f}, ficando o novo salário no valor de R${:.2f}'.format((valor_aumentado), salario_2+valor_aumentado))
 
 """Exercício 3.11 Faça um programa que solicite o preço de uma mercadoria e o percentual de desconto. Exiba o valor do desconto e o preço a pagar."""
 
-
+mercadoria = float(input('Digite o preço da mercadoria: '))
+desconto = float(input("Digite o percentual de desconto: "))
+valor_desconto = mercadoria * (desconto/100)
+print('O desconto foi de R${:.2f}, ficando no valor de R${:.2f}'.format((valor_desconto/100)*mercadoria, mercadoria-valor_desconto))
 
 """Exercício 3.12 Escreva um programa que calcule o tempo de uma viagem de carro.
 Pergunte a distância a percorrer e a velocidade média esperada para a viagem
 """
 
+distancia = float(input('Qual a distância a ser percorrida?'))
+veloc_media = float(input('Qual a velocidade média? (Km/h)'))
 
+print('A distância será percorrida em {:.1f}h'.format(distancia/veloc_media))
 
 """Exercício 3.13 Escreva um programa que converta uma temperatura digitada em
 °C em °F. A fórmula para essa conversão é:  C = 5 * ((F-32) / 9).
@@ -128,9 +144,18 @@ por um carro alugado pelo usuário, assim como a quantidade de dias pelos quais
 o carro foi alugado. Calcule o preço a pagar, sabendo que o carro custa R\$ 60 por dia e R$ 0,15 por km rodado.
 """
 
-
+km_carro_aluguado = float(input('Quantidade de Km percorrido?'))
+dia_carro_alugado = float(input('Quantidade de dias que o carro foi alugado?'))
+valor_total = km_carro_aluguado*0.15+dia_carro_alugado*60
+print('O valor total do aluguel do carro foi de R${:.2f}'.format(valor_total))
 
 """Exercício 3.15 Escreva um programa para calcular a redução do tempo de vida de
 um fumante. Pergunte a quantidade de cigarros fumados por dia e quantos anos ele já fumou. Considere que um fumante perde 10 minutos de vida a cada cigarro,
 calcule quantos dias de vida um fumante perderá. Exiba o total em dias.
 """
+
+qtd_cigarros = int(input('Quantidade de cigarros por dia?'))
+anos_fumante = int(input('Por quantos anos você foi fulmante?'))
+perda_de_vida = qtd_cigarros*365*anos_fumante*10
+dias_perdidos = perda_de_vida/60/24
+print('Você perdeu {:.2f} dias de vida'.format(dias_perdidos))
