@@ -159,3 +159,116 @@ anos_fumante = int(input('Por quantos anos você foi fulmante?'))
 perda_de_vida = qtd_cigarros*365*anos_fumante*10
 dias_perdidos = perda_de_vida/60/24
 print('Você perdeu {:.2f} dias de vida'.format(dias_perdidos))
+
+"""Cap. 4</p>
+Exercicio 4.1 não se aplica</p>
+Exercício 4.2 Escreva um programa que pergunte a velocidade do carro de um
+usuário. Caso ultrapasse 80 km/h, exiba uma mensagem dizendo que o usuário
+foi multado. Nesse caso, exiba o valor da multa, cobrando R$ 5 por km acima de
+80 km/h
+"""
+
+velocidade = float(input('Qual a velocidade do carro? '))
+if velocidade > 80:
+  multa = velocidade - 80
+  print('O motorista foi multado. Com o valor de R${:.2f} de multa'.format(multa*5))
+
+"""Exercício 4.3 Escreva um programa que leia três números e que imprima o maior
+e o menor.
+"""
+
+numero_one = float(input(""))
+numero_two = float(input(""))
+numero_three = float(input(""))
+lista = []
+lista.append(numero_one)
+lista.append(numero_two)
+lista.append(numero_three)
+print(max(lista))
+
+"""Exercício 4.4 Escreva um programa que pergunte o salário do funcionário e calcule o valor do aumento. Para salários superiores a R$ 1.250,00, calcule um aumento de 10%. Para os inferiores ou iguais, de 15%."""
+
+"""Exercício 4.6 Escreva um programa que pergunte a distância que um passageiro
+deseja percorrer em km. Calcule o preço da passagem, cobrando R\$ 0,50 por km
+para viagens de até de 200 km, e R$ 0,45 para viagens mais longas.
+"""
+
+"""Exercício 4.8 Escreva um programa que leia dois números e que pergunte qual
+operação você deseja realizar. Você deve poder calcular a soma (+), subtração (-),
+multiplicação (*) e divisão (/). Exiba o resultado da operação solicitada.
+"""
+
+
+
+"""Exercício 4.9 Escreva um programa para aprovar o empréstimo bancário para
+compra de uma casa. O programa deve perguntar o valor da casa a comprar, o
+salário e a quantidade de anos a pagar. O valor da prestação mensal não pode ser
+superior a 30% do salário. Calcule o valor da prestação como sendo o valor da
+casa a comprar dividido pelo número de meses a pagar.
+
+"""
+
+"""Exercício 4.10 Escreva um programa que calcule o preço a pagar pelo fornecimento
+de energia elétrica. Pergunte a quantidade de kWh consumida e o tipo de instalação: R para residências, I para indústrias e C para comércios. Calcule o preço a
+pagar de acordo com a tabela a seguir.
+
+<code>Preço por tipo e faixa de consumo</code>
+
+|Tipo|Faixa(kWh)|Preço|
+|--|--|--|
+|Residêncial|Até 500</p>Acima de 500|R\$ 0,40 </p> R\$ 0,65 |
+|Comercial|Até 1000</p>Acima de 1000|R\$ 0,55 </p> R\$ 0,60 |
+|Industrial|Até 5000</p>Acima de 5000|R$ 0,40 </p> R\$ 0,65|
+
+"""
+
+"""Cap. 5 </p>
+Exercício 5.1 Modifique o programa para exibir os números de 1 a 100
+"""
+
+interacao = 1
+while interacao <= 100:
+  print(interacao)
+  interacao += 1
+
+"""Exercício 5.2 Modifique o programa para exibir os números de 50 a 100."""
+
+interacao = 50
+while interacao <= 100:
+  print(interacao)
+  interacao += 1
+
+"""Exercício 5.3 Faça um programa para escrever a contagem regressiva do lançamento
+de um foguete. O programa deve imprimir 10, 9, 8, ..., 1, 0 e Fogo! na tela.
+"""
+
+"""Exercício 5.4 Modifique o programa anterior para imprimir de 1 até o número
+digitado pelo usuário, mas, dessa vez, apenas os números ímpares.
+"""
+
+"""Exercício 5.5 Reescreva o programa anterior para escrever os 10 primeiros múltiplos de 3."""
+
+"""Exercício 5.6 Altere o programa anterior para exibir os resultados no mesmo formato de uma tabuada: 2x1 = 2, 2x2=4, ..."""
+
+"""Exercício 5.7 Modifique o programa anterior de forma que o usuário também
+digite o início e o fim da tabuada, em vez de começar com 1 e 10.
+"""
+
+"""Exercício 5.8 Escreva um programa que leia dois números. Imprima o resultado da
+multiplicação do primeiro pelo segundo. Utilize apenas os operadores de soma e
+subtração para calcular o resultado. Lembre-se de que podemos entender a multiplicação de dois números como somas sucessivas de um deles.
+
+Assim, 4 × 5 = 5 + 5 + 5 + 5 = 4 + 4 + 4 + 4 + 4.
+"""
+
+"""Exercício 5.9 Escreva um programa que leia dois números. Imprima a divisão
+inteira do primeiro pelo segundo, assim como o resto da divisão. Utilize apenas
+os operadores de soma e subtração para calcular o resultado. Lembre-se de que
+podemos entender o quociente da divisão de dois números como a quantidade
+de vezes que podemos retirar o divisor do dividendo. Logo, 20 ÷ 4 = 5, uma vez
+que podemos subtrair 4 cinco vezes de 20.
+"""
+
+"""Exercício 5.10 Modifique o programa da listagem 5.10 para que aceite respostas
+com letras maiúsculas e minúsculas em todas as questões.
+"""
