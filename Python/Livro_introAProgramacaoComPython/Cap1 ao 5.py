@@ -188,8 +188,14 @@ print(max(lista))
 
 """Exercício 4.4 Escreva um programa que pergunte o salário do funcionário e calcule o valor do aumento. Para salários superiores a R$ 1.250,00, calcule um aumento de 10%. Para os inferiores ou iguais, de 15%."""
 
+salario_fun = float(input("Qual o salário? "))
+if salario_fun > 1250:
+  print(f"O salario com aumento ficou R${salario_fun*1.1:.2f}")
+else:
+  print(f"O salario com aumento ficou R${salario_fun*1.15:.2f}")
+  
 """Exercício 4.6 Escreva um programa que pergunte a distância que um passageiro
-deseja percorrer em km. Calcule o preço da passagem, cobrando R\$ 0,50 por km
+deseja percorrer em km. Calcule o preço da passagem, cobrando R$ 0,50 por km
 para viagens de até de 200 km, e R$ 0,45 para viagens mais longas.
 """
 
