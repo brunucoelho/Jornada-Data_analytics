@@ -248,17 +248,47 @@ while interacao <= 100:
 de um foguete. O programa deve imprimir 10, 9, 8, ..., 1, 0 e Fogo! na tela.
 """
 
+cont_regressiva = 10
+while cont_regressiva > 0:
+  print(cont_regressiva)
+  cont_regressiva -= 1
+print('0 \n' 'Fogo!')
+
 """Exercício 5.4 Modifique o programa anterior para imprimir de 1 até o número
 digitado pelo usuário, mas, dessa vez, apenas os números ímpares.
 """
 
+cont_regressiva2 = int(input('Até qual número é a contagem? '))
+contagemzero = 1
+while contagemzero <= cont_regressiva2:
+  print(contagemzero)
+  contagemzero += 2
+
 """Exercício 5.5 Reescreva o programa anterior para escrever os 10 primeiros múltiplos de 3."""
 
+multiplosdetres = 3
+while multiplosdetres <= 30:
+  print(multiplosdetres)
+  multiplosdetres += 3
+
 """Exercício 5.6 Altere o programa anterior para exibir os resultados no mesmo formato de uma tabuada: 2x1 = 2, 2x2=4, ..."""
+
+tabuada = int(input('Tabuada de: '))
+sequencia = 1
+while sequencia <= 10 :
+  print(f'{tabuada}x{sequencia} = {tabuada*sequencia}')
+  sequencia = (sequencia+1)
 
 """Exercício 5.7 Modifique o programa anterior de forma que o usuário também
 digite o início e o fim da tabuada, em vez de começar com 1 e 10.
 """
+
+tabuada2 = int(input('Tabuada de: '))
+inicio = int(input('Inicio da tabuada: '))
+final = int(input('Fim da tabuada: '))
+while inicio <= final :
+  print(f'{tabuada2}x{inicio} = {tabuada2*inicio}')
+  inicio += 1
 
 """Exercício 5.8 Escreva um programa que leia dois números. Imprima o resultado da
 multiplicação do primeiro pelo segundo. Utilize apenas os operadores de soma e
@@ -266,6 +296,13 @@ subtração para calcular o resultado. Lembre-se de que podemos entender a multi
 
 Assim, 4 × 5 = 5 + 5 + 5 + 5 = 4 + 4 + 4 + 4 + 4.
 """
+
+termo_1 = int(input())
+termo_2 = int(input())
+ponto = 0
+while ponto < termo_1*termo_2:
+  ponto += termo_1
+print(f'{termo_1} x {termo_2} =', ponto)
 
 """Exercício 5.9 Escreva um programa que leia dois números. Imprima a divisão
 inteira do primeiro pelo segundo, assim como o resto da divisão. Utilize apenas
