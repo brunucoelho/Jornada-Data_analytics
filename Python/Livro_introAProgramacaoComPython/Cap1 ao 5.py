@@ -194,43 +194,74 @@ if salario_fun > 1250:
 else:
   print(f"O salario com aumento ficou R${salario_fun*1.15:.2f}")
   
-"""Exercício 4.6 Escreva um programa que pergunte a distância que um passageiro
-deseja percorrer em km. Calcule o preço da passagem, cobrando R$ 0,50 por km
-para viagens de até de 200 km, e R$ 0,45 para viagens mais longas.
-"""
+"""Exercício 4.6 Escreva um programa que pergunte a distância que um passageiro deseja percorrer em km. Calcule o preço da passagem, cobrando R$ 0,50 por km para viagens de até de 200 km, e R$ 0,45 para viagens mais longas. """
 
-"""Exercício 4.8 Escreva um programa que leia dois números e que pergunte qual
-operação você deseja realizar. Você deve poder calcular a soma (+), subtração (-),
-multiplicação (*) e divisão (/). Exiba o resultado da operação solicitada.
-"""
+distancia_w = float(input('Qual a distancia? '))
+if distancia_w <= 200:
+  print(f'O preço da viagem é de R${distancia_w*0.5:.2f}')
+else:
+  print(f'O preço da viagem é de R${distancia_w*0.45:.2f}')
 
+"""Exercício 4.8 Escreva um programa que leia dois números e que pergunte qual operação você deseja realizar. Você deve poder calcular a soma (+), subtração (-), multiplicação (*) e divisão (/). Exiba o resultado da operação solicitada. """
 
+number_one = int(input())
+number_two = int(input())
+operação = input('Qual operação você deseja realizar? ( +, -, * ou /) ')
+if operação == '+':
+  print(number_one + number_two)
+elif operação == '-':
+  print(number_one - number_two)
+elif operação == '*':
+  print(number_one * number_two)
+else:
+  print(number_one / number_two)
 
 """Exercício 4.9 Escreva um programa para aprovar o empréstimo bancário para
 compra de uma casa. O programa deve perguntar o valor da casa a comprar, o
 salário e a quantidade de anos a pagar. O valor da prestação mensal não pode ser
 superior a 30% do salário. Calcule o valor da prestação como sendo o valor da
-casa a comprar dividido pelo número de meses a pagar.
+casa a comprar dividido pelo número de meses a pagar. """
 
-"""
+valor_casa = float(input('Qual o valor da casa? '))
+receita = float(input('Qual o salario do comprador? '))
+anos_pag = int(input('Em quantos anos deseja quitar a casa? '))
+prestacao = valor_casa/(12*anos_pag)
+barramento = receita*0.3
 
-"""Exercício 4.10 Escreva um programa que calcule o preço a pagar pelo fornecimento
-de energia elétrica. Pergunte a quantidade de kWh consumida e o tipo de instalação: R para residências, I para indústrias e C para comércios. Calcule o preço a
-pagar de acordo com a tabela a seguir.
+if barramento < prestacao:
+  print('Emprestimo não consedido')
+else:
+  print(f'O valor da prestação será de {prestacao}')
 
-<code>Preço por tipo e faixa de consumo</code>
-
+"""Exercício 4.10 Escreva um programa que calcule o preço a pagar pelo fornecimento de energia elétrica. Pergunte a quantidade de kWh consumida e o tipo de instalação: R para residências, I para indústrias e C para comércios. Calcule o preço a pagar de acordo com a tabela a seguir. <code>Preço por tipo e faixa de consumo</code>
 |Tipo|Faixa(kWh)|Preço|
 |--|--|--|
 |Residêncial|Até 500</p>Acima de 500|R\$ 0,40 </p> R\$ 0,65 |
 |Comercial|Até 1000</p>Acima de 1000|R\$ 0,55 </p> R\$ 0,60 |
-|Industrial|Até 5000</p>Acima de 5000|R$ 0,40 </p> R\$ 0,65|
+|Industrial|Até 5000</p>Acima de 5000|R$ 0,40 </p> R\$ 0,65| """
 
-"""
+qnt_kwh = float(input('Qnt de kWh? '))
+tipo_inst = input('Qual o tipo de instalação? \n( R para residências, I para indústrias e C para comércios) ')
+if tipo_inst == 'R' or tipo_inst == 'r':
+  if qnt_kwh <=500:
+    print(f'A conta de energia será de R${qnt_kwh*0.4:.2f}')
+  else:
+    print(f'A conta de energia será de R${qnt_kwh*0.65:.2f}')
+elif tipo_inst == 'C' or tipo_inst == 'c':
+  if qnt_kwh <=1000:
+    print(f'A conta de energia será de R${qnt_kwh*0.55:.2f}')
+  else:
+    print(f'A conta de energia será de R${qnt_kwh*0.6:.2f}')
+elif tipo_inst == 'I' or tipo_inst == 'i':
+  if qnt_kwh <=5000:
+    print(f'A conta de energia será de R${qnt_kwh*0.4:.2f}')
+  else:
+    print(f'A conta de energia será de R${qnt_kwh*0.65:.2f}')
+else:
+  print('Digite um tipo de instalação válido')
 
 """Cap. 5 </p>
-Exercício 5.1 Modifique o programa para exibir os números de 1 a 100
-"""
+Exercício 5.1 Modifique o programa para exibir os números de 1 a 100 """
 
 interacao = 1
 while interacao <= 100:
@@ -290,8 +321,7 @@ while inicio <= final :
   print(f'{tabuada2}x{inicio} = {tabuada2*inicio}')
   inicio += 1
 
-"""Exercício 5.8 Escreva um programa que leia dois números. Imprima o resultado da
-multiplicação do primeiro pelo segundo. Utilize apenas os operadores de soma e
+"""Exercício 5.8 Escreva um programa que leia dois números. Imprima o resultado da multiplicação do primeiro pelo segundo. Utilize apenas os operadores de soma e
 subtração para calcular o resultado. Lembre-se de que podemos entender a multiplicação de dois números como somas sucessivas de um deles.
 
 Assim, 4 × 5 = 5 + 5 + 5 + 5 = 4 + 4 + 4 + 4 + 4.
@@ -304,14 +334,46 @@ while ponto < termo_1*termo_2:
   ponto += termo_1
 print(f'{termo_1} x {termo_2} =', ponto)
 
-"""Exercício 5.9 Escreva um programa que leia dois números. Imprima a divisão
-inteira do primeiro pelo segundo, assim como o resto da divisão. Utilize apenas
-os operadores de soma e subtração para calcular o resultado. Lembre-se de que
-podemos entender o quociente da divisão de dois números como a quantidade
-de vezes que podemos retirar o divisor do dividendo. Logo, 20 ÷ 4 = 5, uma vez
-que podemos subtrair 4 cinco vezes de 20.
-"""
+"""Exercício 5.9 Escreva um programa que leia dois números. Imprima a divisão inteira do primeiro pelo segundo, assim como o resto da divisão. Utilize apenas os operadores de soma e subtração para calcular o resultado. Lembre-se de que podemos entender o quociente da divisão de dois números como a quantidade de vezes que podemos retirar o divisor do dividendo. Logo, 20 ÷ 4 = 5, uma vez que podemos subtrair 4 cinco vezes de 20."""
 
-"""Exercício 5.10 Modifique o programa da listagem 5.10 para que aceite respostas
-com letras maiúsculas e minúsculas em todas as questões.
-"""
+"""Exercício 5.10 Modifique o programa da listagem 5.10 para que aceite respostas com letras maiúsculas e minúsculas em todas as questões."""
+
+"""Exercicio 5.11 Escreva um programa que pergunte o depósito inicial e a taxa de juros de uma poupança. Exiba os valores mês a mês para os 24 primeiros meses. Escreva o total ganho com juros no período."""
+
+"""Exercício 5.12 Altere o programa anterior de forma a perguntar também o valor depositado mensalmente. Esse valor será depositado no início de cada mês, e você deve considerá-lo para o cálculo de juros do mês seguinte."""
+
+"""Exercício 5.13 Escreva um programa que pergunte o valor inicial de uma dívida e o juro mensal. Pergunte também o valor mensal que será pago. Imprima o número de meses para que a dívida seja paga, o total pago e o total de juros pago."""
+
+"""Exercício 5.14 Escreva um programa que leia números inteiros do teclado. O programa deve ler os números até que o usuário digite O (zero). No final da execução, exiba a quantidade de números digitados, assim como a soma e a média aritmética."""
+
+"""Exercício 5.15 Escreva um programa para controlar uma pequena máquina registradora. Você deve solicitar ao usuário que digite o código do produto e a quantidade comprada. Utilize a tabela de códigos abaixo para obter o preço de cada produto:
+| Código | Preço |
+|--|--|
+| 1 |0,50 |
+| 2| 1,00|
+| 3| 4,00|
+| 5| 7,00|
+| 9|8,00 |
+Seu programa deve exibir o total das compras depois que o usuário digitar 0. Qualquer outro código deve gerar a mensagem de erro "Código inválido".
+
+"""Exercício 5.16 Execute o programa (Listagem 5.14) para os seguintes valores: 501, 745, 384, 2,7 e 1. Exercício 5.17 O que acontece se digitarmos 0 (zero) no valor a pagar?"""
+
+"""Exercicio 5.18 Modifique o programa para também trabalhar com notas de R$ 100."""
+
+"""Exercado 5.19 Modifique o programa para aceitar valores decimais, ou seja, também contar moedas de 0,01, 0,02, 0,05, 0,10 e 0,50."""
+
+"""Exercício 5.20 O que acontece se digitarmos 0,001 no programa anterior? Caso ele não funcione, altere-o de forma a corrigir o problema."""
+
+"""Exercício 5.21 Reescreva o programa da listagem 5.14 de forma a continuar executando até que o valor digitado seja 0. Utilize repetições aninhadas."""
+
+"""Exercício 5.22 Escreva um programa que exiba uma lista de opções (menu): adição, subtração, divisão, multiplicação e sair. Imprima a tabuada da operação escolhida. Repita até que a opção saída seja escolhida."""
+
+"""Exercício 5.23 Escreva um programa que leia um número e verifique se é ou não um número primo. Para fazer essa verificação, calcule o resto da divisão do número por 2 e depois por todos os números ímpares até o número lido. Se o resto de uma dessas divisões for igual a zero, o número não é primo. Observe que 0 e 1 não são primos e que 2 é o único número primo que é par."""
+
+"""Exercício 5.24 Modifique o programa anterior de forma a ler um número n. Imprima os n primeiros números primos."""
+
+"""Exercício 5.25 Escreva um programa que calcule a raiz quadrada de um número. Utilize o método de Newton para obter um resultado aproximado. Sendo n o número a obter a raiz quadrada, considere a base b=2. Calcule p usando a fórmula p=(b+(n/b))/2. Agora, calcule o quadrado de p. A cada passo, faça b=p e recalcule p usando a fórmula apresentada. Pare quando a diferença absoluta entre n e o quadrado de p for menor que 0,0001."""
+
+"""Exercício 5.26 Escreva um programa que calcule o resto da divisão inteira entre dois números. Utilize apenas as operações de soma e subtração para calcular o resultado."""
+
+"""Exercício 5.27 Escreva um programa que verifique se um número é palíndromo. Um número é palíndromo se continua o mesmo caso seus dígitos sejam invertidos. Exemplos: 454, 10501 """
