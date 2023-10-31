@@ -336,11 +336,41 @@ print(f'{termo_1} x {termo_2} =', ponto)
 
 """Exercício 5.9 Escreva um programa que leia dois números. Imprima a divisão inteira do primeiro pelo segundo, assim como o resto da divisão. Utilize apenas os operadores de soma e subtração para calcular o resultado. Lembre-se de que podemos entender o quociente da divisão de dois números como a quantidade de vezes que podemos retirar o divisor do dividendo. Logo, 20 ÷ 4 = 5, uma vez que podemos subtrair 4 cinco vezes de 20."""
 
+intnumero = int(input())
+intnumero2 = int(input())
+while intnumero >= intnumero2:
+  intnumero -= intnumero2
+if intnumero == 0:
+  print('A divisão é inteira, logo o resto é 0')
+else:
+  print(f'O resto da divisão é {intnumero}')
+
 """Exercício 5.10 Modifique o programa da listagem 5.10 para que aceite respostas com letras maiúsculas e minúsculas em todas as questões."""
 
 """Exercicio 5.11 Escreva um programa que pergunte o depósito inicial e a taxa de juros de uma poupança. Exiba os valores mês a mês para os 24 primeiros meses. Escreva o total ganho com juros no período."""
 
+deposito = int(input('Depósito inicial: '))
+porcentagem = float(input('Taxa de juros: '))
+juros = porcentagem/100
+mes_a_mes = 0
+while mes_a_mes <=24:
+  print(f'Mês {mes_a_mes}\nR${deposito:.2f}\n')#, end=' - ')
+  taxa = deposito*juros
+  deposito = deposito + taxa
+  mes_a_mes += 1
+
 """Exercício 5.12 Altere o programa anterior de forma a perguntar também o valor depositado mensalmente. Esse valor será depositado no início de cada mês, e você deve considerá-lo para o cálculo de juros do mês seguinte."""
+
+deposito2 = int(input('Depósito inicial: '))
+porcentagem2 = float(input('Taxa de juros: '))
+acrescimo = float(input('Valor depositado mensalmente: '))
+juros2 = porcentagem2/100
+mes_a_mes2 = 0
+while mes_a_mes2 <=24:
+  print(f'Mês {mes_a_mes2}\nR${deposito2:.2f}\n')#, end=' - ')
+  taxa2 = deposito2*juros2
+  deposito2 = deposito2 + taxa2 + acrescimo
+  mes_a_mes2 += 1
 
 """Exercício 5.13 Escreva um programa que pergunte o valor inicial de uma dívida e o juro mensal. Pergunte também o valor mensal que será pago. Imprima o número de meses para que a dívida seja paga, o total pago e o total de juros pago."""
 
@@ -354,7 +384,7 @@ print(f'{termo_1} x {termo_2} =', ponto)
 | 3| 4,00|
 | 5| 7,00|
 | 9|8,00 |
-Seu programa deve exibir o total das compras depois que o usuário digitar 0. Qualquer outro código deve gerar a mensagem de erro "Código inválido".
+Seu programa deve exibir o total das compras depois que o usuário digitar 0. Qualquer outro código deve gerar a mensagem de erro "Código inválido"."""
 
 """Exercício 5.16 Execute o programa (Listagem 5.14) para os seguintes valores: 501, 745, 384, 2,7 e 1. Exercício 5.17 O que acontece se digitarmos 0 (zero) no valor a pagar?"""
 
