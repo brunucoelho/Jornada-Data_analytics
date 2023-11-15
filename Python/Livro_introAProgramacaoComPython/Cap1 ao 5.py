@@ -347,6 +347,19 @@ else:
 
 """Exercício 5.10 Modifique o programa da listagem 5.10 para que aceite respostas com letras maiúsculas e minúsculas em todas as questões."""
 
+pontos = 0
+questão = 1
+while questão <= 3:
+  resposta = input ("Resposta da questão %d: " % questão)
+  if questão == 1 and (resposta == "b" or resposta == "B"):
+    pontos = pontos + 1
+  if questão == 2 and (resposta == "a" or resposta == "A") :
+    pontos = pontos + 1
+  if questão == 3 and (resposta == "d" or resposta == "D"):
+    pontos = pontos + 1
+  questão +=1
+print ("O aluno fez %d ponto(s)" % pontos)
+
 """Exercicio 5.11 Escreva um programa que pergunte o depósito inicial e a taxa de juros de uma poupança. Exiba os valores mês a mês para os 24 primeiros meses. Escreva o total ganho com juros no período."""
 
 deposito = int(input('Depósito inicial: '))
@@ -374,7 +387,32 @@ while mes_a_mes2 <=24:
 
 """Exercício 5.13 Escreva um programa que pergunte o valor inicial de uma dívida e o juro mensal. Pergunte também o valor mensal que será pago. Imprima o número de meses para que a dívida seja paga, o total pago e o total de juros pago."""
 
+divida = float(input("Dívida: "))
+taxa = float(input("Juros (Ex.: 3 para 3%): "))
+pagamento = float(input("Pagamento mensal:"))
+mês = 1
+saldo = dívida
+juros_pago = 0
+while saldo > pagamento:
+  juros = saldo * taxa / 100
+  saldo = saldo + juros - pagamento
+  juros_pago = juros_pago + juros
+  print(f"Saldo da dívida no mês {mês} é de R${saldo:.2f}.")
+  mês = mês + 1
+print(f"Para pagar uma dívida de R${dívida:.2f}, a {taxa:.2f} % de juros,")
+print(f"você precisará de {mês - 1} meses, pagando um total de R${juros_pago:.2f} de juros.")
+print(f"No último mês, você teria um saldo residual de R${saldo:.2f} a pagar.")
+
 """Exercício 5.14 Escreva um programa que leia números inteiros do teclado. O programa deve ler os números até que o usuário digite O (zero). No final da execução, exiba a quantidade de números digitados, assim como a soma e a média aritmética."""
+
+ler = 0
+while True:
+  ler_numero = int(input('Digite o número: '))
+  if ler_numero == 0:
+    break
+  else:
+    ler = ler + ler_numero
+print(ler)
 
 """Exercício 5.15 Escreva um programa para controlar uma pequena máquina registradora. Você deve solicitar ao usuário que digite o código do produto e a quantidade comprada. Utilize a tabela de códigos abaixo para obter o preço de cada produto:
 | Código | Preço |
@@ -386,15 +424,184 @@ while mes_a_mes2 <=24:
 | 9|8,00 |
 Seu programa deve exibir o total das compras depois que o usuário digitar 0. Qualquer outro código deve gerar a mensagem de erro "Código inválido"."""
 
+totalcompra = 0
+while True:
+  codigo = int(input('Digite o código do produto: '))
+  if codigo == 1:
+    qnt_produ = int(input('Digite a quantidade do produto: '))
+    totalcompra += 0.5*qnt_produ
+  elif codigo == 2:
+    qnt_produ = int(input('Digite a quantidade do produto: '))
+    totalcompra += 1*qnt_produ
+  elif codigo == 3:
+    qnt_produ = int(input('Digite a quantidade do produto: '))
+    totalcompra += 4*qnt_produ
+  elif codigo == 5:
+    qnt_produ = int(input('Digite a quantidade do produto: '))
+    totalcompra += 7*qnt_produ
+  elif codigo == 9:
+    qnt_produ = int(input('Digite a quantidade do produto: '))
+    totalcompra += 8*qnt_produ
+  elif codigo == 0:
+    break
+  else:
+    print('Cógido inválido')
+print('O valor total da compra é de R${:.2f}'.format(totalcompra))
+
 """Exercício 5.16 Execute o programa (Listagem 5.14) para os seguintes valores: 501, 745, 384, 2,7 e 1. Exercício 5.17 O que acontece se digitarmos 0 (zero) no valor a pagar?"""
+
+valor=int(input ("Digite o valor a pagar:"))
+cédulas=0
+atual=50
+apagar=valor
+while True:
+  if atual<=apagar:
+    apagar -=atual
+    cédulas+=1
+  else:
+    print ("%d cédula(s) de R$%d" % (cédulas, atual))
+    if apagar == 0:
+      break
+    if atual == 50:
+      atual = 20
+    elif atual == 20:
+      atual = 10
+    elif atual == 10:
+      atual = 5
+    elif atual == 5:
+      atual = 1
+    cédulas = 0
 
 """Exercicio 5.18 Modifique o programa para também trabalhar com notas de R$ 100."""
 
+valor=int(input ("Digite o valor a pagar:"))
+cédulas=0
+atual=100
+apagar=valor
+while True:
+  if atual<=apagar:
+    apagar -=atual
+    cédulas+=1
+  else:
+    print ("%d cédula(s) de R$%d" % (cédulas, atual))
+    if apagar == 0:
+      break
+    if atual == 100:
+      atual = 50
+    if atual == 50:
+      atual = 20
+    elif atual == 20:
+      atual = 10
+    elif atual == 10:
+      atual = 5
+    elif atual == 5:
+      atual = 1
+    cédulas = 0
+
 """Exercado 5.19 Modifique o programa para aceitar valores decimais, ou seja, também contar moedas de 0,01, 0,02, 0,05, 0,10 e 0,50."""
+
+valor=float(input ("Digite o valor a pagar: "))
+cédulas=0
+atual=100
+apagar=valor
+while True:
+  if atual<=apagar:
+    apagar -=atual
+    cédulas+=1
+  else:
+    print ("{:.0f} cédula(s) de R${:.2f}".format(cédulas, atual))
+    if apagar == 0:
+      break
+    if atual == 100:
+      atual = 50 
+    if atual == 50:
+      atual = 20
+    elif atual == 20:
+      atual = 10
+    elif atual == 10:
+      atual = 5
+    elif atual == 5:
+      atual = 1
+    elif atual == 1:
+      atual = 0.50
+    elif atual == .50:
+      atual = 0.10
+    elif atual == 0.1:
+      atual = 0.05
+    elif atual == 0.05:
+      atual = 0.02
+    elif atual == 0.02:
+      atual = 0.01
+    cédulas = 0
 
 """Exercício 5.20 O que acontece se digitarmos 0,001 no programa anterior? Caso ele não funcione, altere-o de forma a corrigir o problema."""
 
+valor=float(input ("Digite o valor a pagar: "))
+cédulas=0
+atual=100
+apagar=valor
+while True:
+  if atual<=apagar:
+    apagar -=atual
+    cédulas+=1
+  else:
+    print ("{:.0f} cédula(s) de R${:.3f}".format(cédulas, atual))
+    if apagar == 0:
+      break
+    if atual == 100:
+      atual = 50 
+    if atual == 50:
+      atual = 20
+    elif atual == 20:
+      atual = 10
+    elif atual == 10:
+      atual = 5
+    elif atual == 5:
+      atual = 1
+    elif atual == 1:
+      atual = 0.50
+    elif atual == .50:
+      atual = 0.10
+    elif atual == 0.1:
+      atual = 0.05
+    elif atual == 0.05:
+      atual = 0.02
+    elif atual == 0.02:
+      atual = 0.01
+    elif atual == 0.01:
+      atual = 0.001
+    elif atual == 0.01:
+      break
+      atual = 0.000
+      #break
+    cédulas = 0
+
 """Exercício 5.21 Reescreva o programa da listagem 5.14 de forma a continuar executando até que o valor digitado seja 0. Utilize repetições aninhadas."""
+
+while True:
+    valor = int(input("Digite o valor a pagar:"))
+    if valor == 0:
+        break
+    cédulas = 0
+    atual = 50
+    apagar = valor
+    while True:
+        if atual <= apagar:
+            apagar -= atual
+            cédulas += 1
+        else:
+            print(f"{cédulas} cédula(s) de R${atual}")
+            if apagar == 0:
+                break
+            if atual == 50:
+                atual = 20
+            elif atual == 20:
+                atual = 10
+            elif atual == 10:
+                atual = 5
+            elif atual == 5:
+                atual = 1
+            cédulas = 0
 
 """Exercício 5.22 Escreva um programa que exiba uma lista de opções (menu): adição, subtração, divisão, multiplicação e sair. Imprima a tabuada da operação escolhida. Repita até que a opção saída seja escolhida."""
 
