@@ -605,6 +605,34 @@ while True:
 
 """Exercício 5.22 Escreva um programa que exiba uma lista de opções (menu): adição, subtração, divisão, multiplicação e sair. Imprima a tabuada da operação escolhida. Repita até que a opção saída seja escolhida."""
 
+print(('#'*5),'Menu',('#'*5),'\n Digite o código para a operação escolhida')
+print('1 - adição\n2 - subtação\n3 - Divisão\n4 - Multiplicação\n0 - Sair\n')
+operacao = int(input())
+tabuada = int(input('Tabuada de: '))
+conta = 1
+while conta <= 10 :
+  if operacao == 1:
+    while conta <= 10 :
+      print(f'{tabuada}+{conta} = {tabuada+conta}')
+      conta = (conta+1)
+  elif operacao == 2:
+    while conta <= 10 :
+      print(f'{tabuada}-{conta} = {tabuada-conta}')
+      conta = (conta+1)
+  elif operacao == 3:
+    while conta <= 10 :
+      print(f'{tabuada}÷{conta} = {tabuada/conta}')
+      conta = (conta+1)
+  elif operacao == 4:
+    while conta <= 10 :
+      print(f'{tabuada}x{conta} = {tabuada*conta}')
+      conta = (conta+1)
+  elif operacao == 0:
+    break
+  else:
+    print('Cógido errado!')
+somador = 0
+
 """Exercício 5.23 Escreva um programa que leia um número e verifique se é ou não um número primo. Para fazer essa verificação, calcule o resto da divisão do número por 2 e depois por todos os números ímpares até o número lido. Se o resto de uma dessas divisões for igual a zero, o número não é primo. Observe que 0 e 1 não são primos e que 2 é o único número primo que é par."""
 
 """Exercício 5.24 Modifique o programa anterior de forma a ler um número n. Imprima os n primeiros números primos."""
@@ -614,3 +642,15 @@ while True:
 """Exercício 5.26 Escreva um programa que calcule o resto da divisão inteira entre dois números. Utilize apenas as operações de soma e subtração para calcular o resultado."""
 
 """Exercício 5.27 Escreva um programa que verifique se um número é palíndromo. Um número é palíndromo se continua o mesmo caso seus dígitos sejam invertidos. Exemplos: 454, 10501 """
+
+palindromo = input()
+len_palin = len(palindromo)
+teste = 0
+while teste < len_palin:
+  if (palindromo[teste]) == (palindromo[-1-teste]):
+    print('eh palindromo')
+    teste +=1
+  else:
+    print('nao e palindromo')
+    break
+    teste +=1
