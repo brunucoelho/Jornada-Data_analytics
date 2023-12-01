@@ -635,22 +635,98 @@ somador = 0
 
 """Exercício 5.23 Escreva um programa que leia um número e verifique se é ou não um número primo. Para fazer essa verificação, calcule o resto da divisão do número por 2 e depois por todos os números ímpares até o número lido. Se o resto de uma dessas divisões for igual a zero, o número não é primo. Observe que 0 e 1 não são primos e que 2 é o único número primo que é par."""
 
+def is_prime(num):
+    if num <= 1: # Verifica se o número é menor ou igual a 1
+        return False
+    elif num == 2: # 2 é o único número primo que é par
+        return True
+    elif num % 2 == 0: # Verifica se o número é divisível por 2
+        return False
+    else:
+        i = 3 # Verifica divisibilidade por números ímpares até a raiz quadrada do número
+        while i <= int(num**0.5):
+            if num % i == 0:
+                return False
+            i += 2  # Aumenta i em 2 para manter a verificação apenas em números ímpares
+        return True
+
+num_primo = int(input("Digite um número: ")) # Leitura do número
+
+if is_prime(num_primo):
+    print(f"{num_primo} é um número primo.")
+else:
+    print(f"{num_primo} não é um número primo.")
+
 """Exercício 5.24 Modifique o programa anterior de forma a ler um número n. Imprima os n primeiros números primos."""
+
+def is_prime2(num): 
+    if num <= 1: #Verifica se o número é menor ou igual a 1
+        return False
+    elif num == 2: #2 é o único número primo que é par
+        return True
+    elif num % 2 == 0: #Verifica se o número é divisível por 2
+        return False
+    else:        
+        i = 3 #Verifica divisibilidade por números ímpares até a raiz quadrada do número
+        while i <= int(num**0.5):
+            if num % i == 0:
+                return False
+            i += 2  # Aumenta i em 2 para manter a verificação apenas em números ímpares
+        return True
+
+n = int(input("Digite a quantidade de números primos a serem impressos: "))
+
+num = 2  # Inicia a busca por primos a partir do número 2
+contagem = 0  # Contador de números primos encontrados
+
+while contagem < n:
+    if is_prime2(num):
+        print(num, end=' ')
+        contagem += 1
+    num += 1
 
 """Exercício 5.25 Escreva um programa que calcule a raiz quadrada de um número. Utilize o método de Newton para obter um resultado aproximado. Sendo n o número a obter a raiz quadrada, considere a base b=2. Calcule p usando a fórmula p=(b+(n/b))/2. Agora, calcule o quadrado de p. A cada passo, faça b=p e recalcule p usando a fórmula apresentada. Pare quando a diferença absoluta entre n e o quadrado de p for menor que 0,0001."""
 
+def calcular_raiz_quadrada(n):
+    b = 2 # Inicialização
+    p = (b + n/b) / 2
+
+    while abs(n - p**2) >= 0.0001:
+      b = p
+      p = (b + n/b) / 2
+    return p
+
+numero = float(input("Digite um número para calcular a raiz quadrada: "))
+
+raiz_quadrada = calcular_raiz_quadrada(numero)
+print(f"A raiz quadrada de {numero} é aproximadamente {raiz_quadrada:.3f}")
+
 """Exercício 5.26 Escreva um programa que calcule o resto da divisão inteira entre dois números. Utilize apenas as operações de soma e subtração para calcular o resultado."""
+
+def resto_divisao_inteira(dividendo, divisor):
+    if divisor == 0: #Verifica se o divisor é zero
+        return "Erro: Divisão por zero."
+    resto = dividendo # Inicialização das variáveis
+
+    while resto >= divisor: # Loop para subtrair o divisor do resto até que o resto seja menor que o divisor
+      resto -= divisor
+    return resto
+
+dividendo = int(input("Digite o dividendo: "))
+divisor = int(input("Digite o divisor: "))
+
+resultado = resto_divisao_inteira(dividendo, divisor)
+print(f"O resto da divisão entre {dividendo} e {divisor} é {resultado}.")
 
 """Exercício 5.27 Escreva um programa que verifique se um número é palíndromo. Um número é palíndromo se continua o mesmo caso seus dígitos sejam invertidos. Exemplos: 454, 10501 """
 
-palindromo = input()
-len_palin = len(palindromo)
-teste = 0
-while teste < len_palin:
-  if (palindromo[teste]) == (palindromo[-1-teste]):
-    print('eh palindromo')
-    teste +=1
-  else:
-    print('nao e palindromo')
-    break
-    teste +=1
+def eh_palindromo(palindromo):
+    str_palindromo = str(palindromo) #converter em str para melhor manipulacao
+    return str_palindromo == str_palindromo[::-1]  #compara o num com seu inverso
+
+palindromo = int(input("Digite um número para verificar se é palíndromo: "))
+
+if eh_palindromo(palindromo):
+    print(f"{palindromo} é um número palíndromo.")
+else:
+    print(f"{palindromo} não é um número palíndromo.")
